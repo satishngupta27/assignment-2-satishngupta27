@@ -12,5 +12,9 @@ import problem4.node.QNode;
 public class MyQueue {
    private QNode front, rear;
 
+   public MyQueue() {
+      this.front = this.rear = null;
+   }
+
 
 }
