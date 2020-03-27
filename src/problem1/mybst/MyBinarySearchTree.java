@@ -8,6 +8,9 @@ package problem1.mybst;
 
 import problem1.node.TreeNode;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 // to implement BinarySearchTree
 public class MyBinarySearchTree {
     private TreeNode root;
@@ -92,6 +95,29 @@ public class MyBinarySearchTree {
 
     public void printInorder() {
         printInorder(root);
+    }
+
+
+    public void printLeftChild() {
+        Queue<TreeNode> queue = new LinkedList<TreeNode>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+
+            TreeNode tempNode = queue.poll();
+            if (tempNode.getLeft() != null) {
+                System.out.println(tempNode.getLeft().getData() + " ");
+            }
+
+            /*Enqueue left child */
+            if (tempNode.getLeft() != null) {
+                queue.add(tempNode.getLeft());
+            }
+
+            /*Enqueue right child */
+            if (tempNode.getRight() != null) {
+                queue.add(tempNode.getRight());
+            }
+        }
     }
 
 
