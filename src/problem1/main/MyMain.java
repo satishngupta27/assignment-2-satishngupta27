@@ -27,6 +27,8 @@ public class MyMain {
         bt.printPostorder();
         System.out.println();
         bt.printLeftChild();
+
+        System.out.println("Number of Nodes which have no left child= " + bt.countWithNoLeftChild());
     }
 
 }

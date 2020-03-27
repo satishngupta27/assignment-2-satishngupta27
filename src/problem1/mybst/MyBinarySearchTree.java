@@ -120,5 +120,29 @@ public class MyBinarySearchTree {
         }
     }
 
+    public int countWithNoLeftChild() {
+        Queue<TreeNode> queue = new LinkedList<TreeNode>();
+        int c = 0;
+        queue.add(root);
+        while (!queue.isEmpty()) {
+
+            TreeNode tempNode = queue.poll();
+            if (tempNode.getLeft() == null) {
+                c++;
+            }
+
+            /*Enqueue left child */
+            if (tempNode.getLeft() != null) {
+                queue.add(tempNode.getLeft());
+            }
+
+            /*Enqueue right child */
+            if (tempNode.getRight() != null) {
+                queue.add(tempNode.getRight());
+            }
+        }
+        return c;
+    }
+
 
 }
