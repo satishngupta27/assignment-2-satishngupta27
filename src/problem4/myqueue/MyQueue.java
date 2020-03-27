@@ -7,7 +7,10 @@
 package problem4.myqueue;
 // to create queue to store pre - order successor
 
+import problem4.node.QNode;
+
 public class MyQueue {
+   private QNode front, rear;
 
 
 }
