@@ -1,10 +1,11 @@
 package problem4.node;
 
 public class QNode {
-    int data;
-    QNode next;
+    private int data;
+    private QNode next;
 
     public QNode(int data) {
         this.data = data;
+        this.next = null;
     }
 }
