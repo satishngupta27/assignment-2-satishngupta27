@@ -105,7 +105,7 @@ public class MyBinarySearchTree {
 
             TreeNode tempNode = queue.poll();
             if (tempNode.getLeft() != null) {
-                System.out.println(tempNode.getLeft().getData() + " ");
+                System.out.print(tempNode.getLeft().getData() + " ");
             }
 
             /*Enqueue left child */
