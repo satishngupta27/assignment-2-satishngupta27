@@ -7,6 +7,7 @@
 package problem5.circularqueue;
 
 import problem5.node.Node;
+import problem5.student.Student;
 
 //to implement circular queue
 public class MyCircularQueue {
@@ -16,6 +17,28 @@ public class MyCircularQueue {
     public MyCircularQueue() {
         rear = null;
         size = 0;
+    }
+
+    private static boolean isEmpty() {
+        boolean response = false;
+        if (rear == null)
+            response = true;
+        return response;
+    }
+
+    public void enqueue(Student data) {
+        Node node = new Node(data);
+        if (isEmpty()) {
+            rear = node;
+            size++;
+            node.setNext(node);
+        } else {
+            node.setNext(rear.getNext());
+            rear.setNext(node);
+            rear = node;
+            size++;
+        }
+
     }
 
 
