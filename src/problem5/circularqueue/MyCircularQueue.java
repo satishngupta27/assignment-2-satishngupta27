@@ -19,6 +19,24 @@ public class MyCircularQueue {
         size = 0;
     }
 
+    public static boolean dequeue() {
+        boolean response = false;
+        if (!isEmpty()) {
+            size--;
+            response = true;
+            if (rear.getNext() == rear) {
+                rear = null;
+            } else {
+                rear.setNext(rear.getNext().getNext());
+            }
+        }
+        return response;
+    }
+
+    public Node getRear() {
+        return rear;
+    }
+
     private static boolean isEmpty() {
         boolean response = false;
         if (rear == null)
@@ -39,6 +57,10 @@ public class MyCircularQueue {
             size++;
         }
 
+    }
+
+    public int getSize() {
+        return size;
     }
 
 
