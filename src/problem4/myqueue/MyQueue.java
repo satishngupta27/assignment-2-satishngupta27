@@ -14,5 +14,16 @@ public class MyQueue {
 
    }
 
+   public int getSize(MyQueue queue) {
+      queue.tmp = queue.front;
+      while (queue.tmp != null) {
+         ++size;
+         queue.tmp = queue.tmp.getNext();
+      }
+      queue.tmp = queue.front;
+      return size;
+
+   }
+
 
 }
